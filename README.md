@@ -1,3 +1,11 @@
+https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298
+https://www.bezkoder.com/spring-boot-jwt-authentication/
+redis-server /usr/local/etc/redis.conf
+brew services start postgresql
+psql postgres\
+
+
+
 # RecargaPay Users API
 
 

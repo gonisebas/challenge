@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "a7d935da-ef5d-4ace-992c-8347a5957f0f",
+		"name": "challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"gonisebas@gmail.com\",\n    \"name\": \"Sebastian\",\n    \"password\": \"1234\",\n    \"surname\":\"Goñi\",\n    \"passwordConfirm\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"register"
+					]
+				},
+				"description": "Permite registrar usuarios que serán identificados a partir del email ingresado."
+			},
+			"response": []
+		},
+		{
+			"name": "Add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWJhc3RpYW4uZ29uaUBtYWlsLmNvbSIsImlhdCI6MTYzOTg0Nzg0NiwiZXhwIjoxNjM5ODQ4MTQ2fQ.iIymwS_n8UgnVZr_L_n49BRem5H2m-ZG-RdWneMMCFNpdaeAgVGxf3BWWFQipRZ7QNjBqp-8l6JtOjHhU7jj0A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/add?x=8&y=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"add"
+					],
+					"query": [
+						{
+							"key": "x",
+							"value": "8"
+						},
+						{
+							"key": "y",
+							"value": "3"
+						}
+					]
+				},
+				"description": "Realiza la suma de dos números reales."
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"sebastian.gonis@mail.com\",\n     \"password\":\"email1234\"\n   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"authenticate"
+					]
+				},
+				"description": "Permite a los usuarios autenticarse a la aplicación para realizar las operaciones de suma y visualización de todas las llamadas.\nSe deben ingresar el email y la contraseña que fueron dados al momento de la registración, cómo respuesta se recibirá un token que servirá como autenticación para efectuar las operaciones mencionadas."
+			},
+			"response": []
+		},
+		{
+			"name": "History",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWJhc3RpYW4uZ29uaUBtYWlsLmNvbSIsImlhdCI6MTYzOTg0Nzg0NiwiZXhwIjoxNjM5ODQ4MTQ2fQ.iIymwS_n8UgnVZr_L_n49BRem5H2m-ZG-RdWneMMCFNpdaeAgVGxf3BWWFQipRZ7QNjBqp-8l6JtOjHhU7jj0A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "JSSESSIONID",
+						"value": "A9B48EC7EAE1CB3BF15F9C8D40B99FEE",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/history?page=10&size=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"history"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "10"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Lista todas las llamadas que fueron hechas a la aplicación de forma paginada."
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWJhc3RpYW4uZ29uaUBtYWlsLmNvbSIsImlhdCI6MTYzOTg0MzIzOSwiZXhwIjoxNjM5ODQzNTM5fQ.FTZI-wLauFyiMp9_tnfupWy_-Zy3V3iWJuaC-iwslCF-fUq2mzh2U4uIVRpwh5x9QC7q_Jw-E9BnCxK1B-7d5w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Sebas",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "Goni",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "gonisebas@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "pepito",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"logout"
+					]
+				},
+				"description": "Invalida el token, por lo cual no podrá volver a ser usado para operar sobre la aplicación."
+			},
+			"response": []
+		}
+	]
+}
