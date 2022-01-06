@@ -25,7 +25,7 @@ Una vez registrado el usuario se podrá autenticar a la API a través del Login,
 
 Para ejecutar los endpoints securizados se deberá agregar el header de autorización "Bearer token" con el token obtenido en el login.
 
-Podés encontrar una copia de la API en [Postman](src/main/resources/challenge.postman_collection.json)
+Podés encontrar una copia de la API en [Postman](challenge-app/src/main/resources/challenge.postman_collection.json)
 
 
 ##Docker
